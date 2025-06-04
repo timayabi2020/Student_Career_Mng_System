@@ -78,4 +78,13 @@ jobs:
         with:
           app-name: 'scms'
           slot-name: 'Production'
+
+      - name: Run database migrations
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az webapp run-command invoke \
+              --name scms \
+              --resource-group your-resource-group \
+              --command "python manage.py migrate"
           
