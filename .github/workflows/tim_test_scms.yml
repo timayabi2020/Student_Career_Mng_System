@@ -86,5 +86,5 @@ jobs:
             az webapp run-command invoke \
               --name scms \
               --resource-group your-resource-group \
-              --command "python manage.py migrate"
+              --command "bash -c 'python manage.py migrate'"
           
